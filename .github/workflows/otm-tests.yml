@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install TypeScript
+      - name: Install TypeScript and Mocha
         run: npm install -g typescript mocha
 
       - name: Compile TypeScript
@@ -47,7 +47,7 @@ jobs:
           echo "Chrome version: $CHROME_VERSION"
           wget -q "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json" -O versions.json
           DRIVER_URL=$(python3 -c "
-          import json, sys
+          import json
           data = json.load(open('versions.json'))
           versions = [v for v in data['versions'] if v['version'].startswith('$CHROME_VERSION.')]
           if versions:

@@ -1,6 +1,6 @@
 ﻿import { By } from "selenium-webdriver";
 import { Popup } from "../Util/Popup";
-import { UploadDocumentSuccessfulPopup } from "./UploadDocumentSuccessfulPopUp";
+import { UploadDocumentSuccessfulPopup } from "./UploadDocumentSuccessfulPopup";
 
 export class UploadDocumentPopup extends Popup {
     private sTitle = "Upload Document";

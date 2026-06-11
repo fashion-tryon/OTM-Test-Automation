@@ -1,7 +1,7 @@
-import { assert } from "chai";
+﻿import { assert } from "chai";
 import { BIPHomePage } from "../../Src/Pages/BIPHomePage";
-import { CommonFunctions } from "../../Src/util/CommonFunctions";
-import { Constants } from "../../Src/util/Constants";
+import { CommonFunctions } from "../../Src/Util/CommonFunctions";
+import { Constants } from "../../Src/Util/Constants";
 import { TestUtil } from "../../Src/Util/TestUtil";
 
 describe('Test_21_BIPConsoleLogin', function () {

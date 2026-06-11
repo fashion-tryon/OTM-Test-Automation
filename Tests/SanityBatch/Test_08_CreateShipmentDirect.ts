@@ -1,6 +1,6 @@
-import { assert } from "chai";
-import { CommonFunctions } from "../../Src/util/CommonFunctions";
-import { Constants } from "../../Src/util/Constants";
+﻿import { assert } from "chai";
+import { CommonFunctions } from "../../Src/Util/CommonFunctions";
+import { Constants } from "../../Src/Util/Constants";
 import { TestUtil } from "../../Src/Util/TestUtil";
 
 describe('Test_08_CreateShipmentDirect', function () {

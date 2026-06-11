@@ -34,7 +34,8 @@ export class Browser {
         let driver: WebDriver;
         var webdriver = await require('selenium-webdriver');
         var chrome = require("selenium-webdriver/chrome");
-        let strDownloadFolder = await require('path').join(process.env.USERPROFILE, "Downloads");
+        let homeDir = process.env.HOME || process.env.USERPROFILE || ".";
+        let strDownloadFolder = await require('path').join(homeDir, "Downloads");
         var chromeCapabilities = await webdriver.Capabilities.chrome();
         var chromeOptions = new chrome.Options();
 
@@ -51,10 +52,19 @@ export class Browser {
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--safebrowsing-disable-download-protection");
 
+        if (Constants.envConfig && Constants.envConfig.HeadlessBrowser === "true") {
+            chromeOptions.addArguments("--headless=new");
+        }
+
         await chromeCapabilities.set('acceptInsecureCerts', true);
         await chromeCapabilities.set('acceptSslCerts', true);
 
-        driver = await new webdriver.Builder().withCapabilities(chromeCapabilities).setChromeOptions(chromeOptions).build();
+        let builder = new webdriver.Builder().withCapabilities(chromeCapabilities).setChromeOptions(chromeOptions);
+        if (Constants.envConfig && Constants.envConfig.ChromeDriverPath) {
+            let service = new chrome.ServiceBuilder(Constants.envConfig.ChromeDriverPath);
+            builder = builder.setChromeService(service);
+        }
+        driver = await builder.build();
 
         // Using Hub
         //driver = await new webdriver.Builder().usingServer('http://localhost:4455/wd/hub').withCapabilities(chromeCapabilities).build();

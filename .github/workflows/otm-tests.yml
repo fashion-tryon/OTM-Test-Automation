@@ -42,14 +42,12 @@ jobs:
         run: |
           echo "=== git HEAD commit ==="
           git rev-parse HEAD
-          echo "=== Src/Util/Browser.ts lines 33-40 (source) ==="
-          sed -n '33,40p' Src/Util/Browser.ts
-          echo "=== Bin/Src/Util/Browser.js lines 30-40 (compiled capital U) ==="
-          sed -n '30,40p' Bin/Src/Util/Browser.js 2>/dev/null || echo "NOT FOUND: Bin/Src/Util/Browser.js"
-          echo "=== Bin/Src/util/Browser.js lines 30-40 (compiled lowercase u) ==="
-          sed -n '30,40p' Bin/Src/util/Browser.js 2>/dev/null || echo "NOT FOUND: Bin/Src/util/Browser.js"
-          echo "=== Bin/ directory listing ==="
-          find Bin/Src -name "Browser.js" -o -name "Constants.js" | sort
+          echo "=== tsc version ==="
+          tsc --version
+          echo "=== Bin/Src/Util/Browser.js full file ==="
+          cat -n Bin/Src/Util/Browser.js 2>/dev/null || echo "NOT FOUND"
+          echo "=== Bin/Src/Util/Constants.js lines 1-60 ==="
+          sed -n '1,60p' Bin/Src/Util/Constants.js 2>/dev/null || echo "NOT FOUND"
 
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1

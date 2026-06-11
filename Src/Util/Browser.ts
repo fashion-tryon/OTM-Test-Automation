@@ -34,17 +34,9 @@ export class Browser {
         let driver: WebDriver;
         var webdriver = await require('selenium-webdriver');
         var chrome = require("selenium-webdriver/chrome");
-        let homeDir = process.env.HOME || process.env.USERPROFILE || ".";
-        let strDownloadFolder = await require('path').join(homeDir, "Downloads");
         var chromeCapabilities = await webdriver.Capabilities.chrome();
         var chromeOptions = new chrome.Options();
 
-        let prefs = {
-            'download.default_directory': strDownloadFolder,
-            'download.prompt_for_download': false,
-            'safebrowsing.enabled': true
-        }
-        chromeOptions.setUserPreferences(prefs);
         // chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("start-maximized");
         chromeOptions.addArguments("--disable-popup-blocking");

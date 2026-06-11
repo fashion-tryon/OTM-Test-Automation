@@ -1,0 +1,1 @@
+echo "Initializing Project" & npm install -g typescript mocha & tsc --init & npm install & tsc & echo "Initializing completed"

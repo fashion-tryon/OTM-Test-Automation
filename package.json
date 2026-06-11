@@ -1,0 +1,18 @@
+{
+   "scripts": {
+      "test": "mocha --no-timeout --reporter=mochawesome --reporter-options enableCode=false "
+   },
+   "author": "Oracle Corporation",
+   "dependencies": {
+      "@oracle/oraclejet-webdriver": "^11.0.1",
+      "@types/chai": "",
+      "@types/mocha": "",
+      "@types/node": "",
+      "@types/selenium-webdriver": "4.0.0",
+      "chai": "4.3.10",
+      "jsonpath": "",
+      "mochawesome": "",
+      "selenium-webdriver": "^4.27.0"
+   },
+   "description": ""
+}

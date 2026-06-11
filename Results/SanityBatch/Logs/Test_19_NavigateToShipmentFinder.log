@@ -1,0 +1,18 @@
+[INFO 12/12/2024, 1:04:34 pm] Running tests on :: chrome
+[INFO 12/12/2024, 1:04:35 pm] URL - https://otmgtm-test-a629995.otmgtm.us-phoenix-1.ocs.oraclecloud.com/
+[INFO 12/12/2024, 1:04:48 pm] Page title :: Cloud Sign In
+[INFO 12/12/2024, 1:04:48 pm] Entering User name : bhanu.boddu@kraftheinz.com
+[INFO 12/12/2024, 1:04:49 pm] Entering Password : KraftAccel123$
+[INFO 12/12/2024, 1:04:49 pm] Clicking Sign In button
+[INFO 12/12/2024, 1:04:56 pm] Page title :: Transportation Management - Home
+[INFO 12/12/2024, 1:04:57 pm] Page title :: Transportation Management - Home
+[INFO 12/12/2024, 1:05:04 pm] Clicking on Main Menu: Shipment Management
+[INFO 12/12/2024, 1:05:04 pm] Clicking link Shipment Management
+[INFO 12/12/2024, 1:05:05 pm] Clicking link Buy Shipments
+[INFO 12/12/2024, 1:05:08 pm] Page title :: Buy Shipments Finder
+[PASS 12/12/2024, 1:05:09 pm]  TEST STATUS :: PASSED
+[INFO 12/12/2024, 3:27:06 pm] Running tests on :: chrome
+[INFO 12/12/2024, 3:27:07 pm] URL - https://otmgtm-test-a629995.otmgtm.us-phoenix-1.ocs.oraclecloud.com/
+[FAIL 12/12/2024, 3:27:14 pm] Not a login page. Please check URL once
+[WARNING 12/12/2024, 3:27:41 pm] Screenshot - Unable to capture screnshot
+[FAIL 12/12/2024, 3:27:41 pm]  TEST STATUS :: FAILED*******************

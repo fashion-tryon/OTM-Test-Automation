@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "./Bin",
+    "strict": false,
+    "forceConsistentCasingInFileNames": false,
+    "types": [
+      "node",
+      "mocha"
+    ],
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "./node_modules/*"
+  ]
+}

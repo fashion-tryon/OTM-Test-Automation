@@ -1,0 +1,13 @@
+[INFO 12/12/2024, 1:05:13 pm] Running tests on :: chrome
+[INFO 12/12/2024, 1:05:14 pm] URL - https://otmgtm-test-a629995.otmgtm.us-phoenix-1.ocs.oraclecloud.com//analytics
+[INFO 12/12/2024, 1:05:29 pm] Page title :: Cloud Sign In
+[INFO 12/12/2024, 1:05:29 pm] Entering User name : bhanu.boddu@kraftheinz.com
+[INFO 12/12/2024, 1:05:29 pm] Entering Password : KraftAccel123$
+[INFO 12/12/2024, 1:05:29 pm] Clicking Sign In button
+[INFO 12/12/2024, 1:05:38 pm] Page title :: Oracle Analytics Home
+[INFO 12/12/2024, 1:05:38 pm] Page title :: Oracle Analytics Home
+[PASS 12/12/2024, 1:05:39 pm]  TEST STATUS :: PASSED
+[INFO 12/12/2024, 3:27:45 pm] Running tests on :: chrome
+[INFO 12/12/2024, 3:27:46 pm] URL - https://otmgtm-test-a629995.otmgtm.us-phoenix-1.ocs.oraclecloud.com//analytics
+[WARNING 12/12/2024, 3:27:48 pm] Screenshot - Unable to capture screnshot
+[FAIL 12/12/2024, 3:27:48 pm]  TEST STATUS :: FAILED*******************

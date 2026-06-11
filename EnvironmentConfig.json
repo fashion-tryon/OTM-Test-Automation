@@ -1,0 +1,7 @@
+{
+   "URL" : "https://otmgtm-test-a629995.otmgtm.us-phoenix-1.ocs.oraclecloud.com/",
+   "DBA_USERNAME" : "LEL7597",
+   "DBA_PASSWORD" : "KraftHCLTech123$",
+   "BROWSER" : "chrome", 
+   "ELEMENT_TIMEOUT" : 60000
+}

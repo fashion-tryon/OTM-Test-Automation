@@ -1,0 +1,10 @@
+[INFO 12/12/2024, 1:05:43 pm] Running tests on :: chrome
+[INFO 12/12/2024, 1:05:44 pm] URL - https://otmgtm-test-a629995.otmgtm.us-phoenix-1.ocs.oraclecloud.com//xmlpserver
+[FAIL 12/12/2024, 1:05:52 pm] Not a login page. Please check URL once
+[WARNING 12/12/2024, 1:06:26 pm] Screenshot - Unable to capture screnshot
+[FAIL 12/12/2024, 1:06:26 pm]  TEST STATUS :: FAILED*******************
+[INFO 12/12/2024, 3:27:49 pm] Running tests on :: chrome
+[INFO 12/12/2024, 3:27:50 pm] URL - https://otmgtm-test-a629995.otmgtm.us-phoenix-1.ocs.oraclecloud.com//xmlpserver
+[FAIL 12/12/2024, 3:28:00 pm] Not a login page. Please check URL once
+[WARNING 12/12/2024, 5:52:24 pm] Screenshot - Unable to capture screnshot
+[FAIL 12/12/2024, 5:52:24 pm]  TEST STATUS :: FAILED*******************

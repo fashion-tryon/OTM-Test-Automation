@@ -38,6 +38,19 @@ jobs:
       - name: Compile TypeScript
         run: tsc
 
+      - name: Verify compiled output
+        run: |
+          echo "=== git HEAD commit ==="
+          git rev-parse HEAD
+          echo "=== Src/Util/Browser.ts lines 33-40 (source) ==="
+          sed -n '33,40p' Src/Util/Browser.ts
+          echo "=== Bin/Src/Util/Browser.js lines 30-40 (compiled capital U) ==="
+          sed -n '30,40p' Bin/Src/Util/Browser.js 2>/dev/null || echo "NOT FOUND: Bin/Src/Util/Browser.js"
+          echo "=== Bin/Src/util/Browser.js lines 30-40 (compiled lowercase u) ==="
+          sed -n '30,40p' Bin/Src/util/Browser.js 2>/dev/null || echo "NOT FOUND: Bin/Src/util/Browser.js"
+          echo "=== Bin/ directory listing ==="
+          find Bin/Src -name "Browser.js" -o -name "Constants.js" | sort
+
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1
 

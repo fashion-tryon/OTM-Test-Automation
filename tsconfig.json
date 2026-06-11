@@ -4,7 +4,7 @@
     "module": "commonjs",
     "outDir": "./Bin",
     "strict": false,
-    "forceConsistentCasingInFileNames": false,
+    "forceConsistentCasingInFileNames": true,
     "types": [
       "node",
       "mocha"

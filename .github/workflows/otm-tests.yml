@@ -38,17 +38,6 @@ jobs:
       - name: Compile TypeScript
         run: tsc
 
-      - name: Verify compiled output
-        run: |
-          echo "=== git HEAD commit ==="
-          git rev-parse HEAD
-          echo "=== tsc version ==="
-          tsc --version
-          echo "=== Bin/Src/Util/Browser.js full file ==="
-          cat -n Bin/Src/Util/Browser.js 2>/dev/null || echo "NOT FOUND"
-          echo "=== Bin/Src/Util/Constants.js lines 1-60 ==="
-          sed -n '1,60p' Bin/Src/Util/Constants.js 2>/dev/null || echo "NOT FOUND"
-
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1
 

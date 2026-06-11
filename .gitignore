@@ -1,0 +1,12 @@
+node_modules/
+client/node_modules/
+client/dist/
+allure-results/
+allure-report/
+test-results/
+otm_automation.db
+otm-portal.db
+otm-portal.db-shm
+otm-portal.db-wal
+.env
+regions.json

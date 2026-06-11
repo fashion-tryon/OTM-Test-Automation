@@ -1,0 +1,26 @@
+{
+  "name": "otm-automation-portal",
+  "version": "1.0.0",
+  "description": "OTM Test Automation Portal — React frontend, Node backend, SQLite, Playwright",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build",
+    "postinstall": "npm run build",
+    "test:login": "npx playwright test tests/login.spec.ts",
+    "test:all": "npx playwright test",
+    "report": "npx allure generate allure-results --clean -o allure-report"
+  },
+  "dependencies": {
+    "better-sqlite3": "latest",
+    "dotenv": "latest"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@types/better-sqlite3": "latest",
+    "@types/node": "latest",
+    "allure-commandline": "latest",
+    "allure-playwright": "latest",
+    "typescript": "latest"
+  }
+}

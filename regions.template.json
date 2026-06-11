@@ -1,0 +1,32 @@
+{
+  "north-america": {
+    "label":    "North America",
+    "username": "YOUR_NA_USERNAME",
+    "password": "YOUR_NA_PASSWORD",
+    "domain":   "YOUR_NA_DOMAIN"
+  },
+  "poland": {
+    "label":    "Europe - Poland",
+    "username": "YOUR_PL_USERNAME",
+    "password": "YOUR_PL_PASSWORD",
+    "domain":   "YOUR_PL_DOMAIN"
+  },
+  "turkey": {
+    "label":    "Europe - Turkey",
+    "username": "YOUR_TR_USERNAME",
+    "password": "YOUR_TR_PASSWORD",
+    "domain":   "YOUR_TR_DOMAIN"
+  },
+  "germany": {
+    "label":    "Europe - Germany",
+    "username": "YOUR_DE_USERNAME",
+    "password": "YOUR_DE_PASSWORD",
+    "domain":   "YOUR_DE_DOMAIN"
+  },
+  "brazil": {
+    "label":    "South America - Brazil",
+    "username": "YOUR_BR_USERNAME",
+    "password": "YOUR_BR_PASSWORD",
+    "domain":   "YOUR_BR_DOMAIN"
+  }
+}

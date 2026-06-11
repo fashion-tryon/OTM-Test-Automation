@@ -26,7 +26,19 @@ class Constants {
         this.TEST_SCREENSHOT_FOLDER = await path.join(this.PROJECT_FOLDER, "Results", sParentFolder, "Screenshots");
         await CommonFunctions_1.CommonFunctions.createFolder(path.join("Results", sParentFolder), "Logs,Screenshots");
         this.TEST_OBJECT = testObj;
-        this.envConfig = JSON.parse(fs.readFileSync(path.join(Constants.PROJECT_FOLDER, "EnvironmentConfig.json"), "utf8"));
+        const envConfigPath = path.join(Constants.PROJECT_FOLDER, "EnvironmentConfig.json");
+        console.log("[DEBUG] process.cwd():", process.cwd());
+        console.log("[DEBUG] EnvironmentConfig.json path:", envConfigPath);
+        try {
+            const rawJson = fs.readFileSync(envConfigPath, "utf8");
+            console.log("[DEBUG] Raw EnvironmentConfig.json contents:", rawJson);
+            this.envConfig = JSON.parse(rawJson);
+            console.log("[DEBUG] Parsed envConfig:", JSON.stringify(this.envConfig));
+        }
+        catch (err) {
+            console.error("[DEBUG] Failed to read EnvironmentConfig.json:", err);
+            throw err;
+        }
         this.sURL = await this.getURL();
         this.sBROWSER = await this.getBrowser();
         this.DBA_USERNAME = await this.envConfig["DBA_USERNAME"];

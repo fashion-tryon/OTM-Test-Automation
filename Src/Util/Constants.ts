@@ -55,7 +55,7 @@ export class Constants {
 
     this.TEST_OBJECT = testObj;
 
-    this.envConfig = await require(Constants.PROJECT_FOLDER + "\\EnvironmentConfig.json");
+    this.envConfig = await require(path.join(Constants.PROJECT_FOLDER, "EnvironmentConfig.json"));
 
     this.sURL = await this.getURL();
     this.sBROWSER = await this.getBrowser();

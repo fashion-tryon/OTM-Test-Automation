@@ -11,11 +11,18 @@ let _db = null;
 
 function db() {
   if (!_db) {
+    console.log('[db] opening:', DB_PATH);
     _db = new Database(DB_PATH);
     _db.pragma('journal_mode = WAL');
     initSchema(_db);
     migrate(_db);
-    seedRegistry(_db);
+    const count = _db.prepare('SELECT COUNT(*) as n FROM test_suites').get().n;
+    console.log('[db] test_suites count:', count);
+    if (count === 0) {
+      console.log('[db] seeding registry data...');
+      seedRegistry(_db);
+      console.log('[db] seeding complete');
+    }
   }
   return _db;
 }
@@ -87,9 +94,6 @@ function migrate(d) {
 
 // ── Seed ─────────────────────────────────────────────────────────────────
 function seedRegistry(d) {
-  const count = d.prepare('SELECT COUNT(*) as n FROM test_suites').get().n;
-  if (count > 0) return; // already seeded
-
   const insertSuite = d.prepare(
     `INSERT INTO test_suites (region, name, description) VALUES (?, ?, ?)`
   );

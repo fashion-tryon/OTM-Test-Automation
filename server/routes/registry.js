@@ -3,12 +3,14 @@ const fs   = require('fs');
 const path = require('path');
 const db   = require('../db');
 
-const REGIONS_FILE = path.join(__dirname, '..', '..', 'regions.json');
-
-function loadRegions() {
-  try { return JSON.parse(fs.readFileSync(REGIONS_FILE, 'utf8')); }
-  catch (_) { return {}; }
-}
+// Region metadata is static — not dependent on regions.json credentials file
+const REGION_META = {
+  'north-america': { label: 'North America' },
+  'poland':        { label: 'Europe - Poland' },
+  'turkey':        { label: 'Europe - Turkey' },
+  'germany':       { label: 'Europe - Germany' },
+  'brazil':        { label: 'South America - Brazil' },
+};
 
 function json(res, data, status) {
   res.writeHead(status || 200, { 'Content-Type': 'application/json' });
@@ -32,8 +34,7 @@ function handleRegistry(req, res, upath) {
 
   // GET /api/registry/regions
   if (method === 'GET' && upath === '/api/registry/regions') {
-    const regions = loadRegions();
-    const result  = Object.entries(regions).map(([key, cfg]) => {
+    const result = Object.entries(REGION_META).map(([key, cfg]) => {
       const suites      = db.getSuitesByRegion(key);
       const totalCases  = suites.reduce((s, x) => s + x.case_count, 0);
       const activeCases = suites.reduce((s, x) => s + x.active_count, 0);

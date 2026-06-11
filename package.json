@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "build": "cd client && npm install && npm run build",
+    "build": "npm install --prefix client && npm run build --prefix client",
     "postinstall": "npm run build",
     "test:login": "npx playwright test tests/login.spec.ts",
     "test:all": "npx playwright test",

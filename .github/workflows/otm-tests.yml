@@ -67,12 +67,13 @@ jobs:
         run: |
           cat > EnvironmentConfig.json << EOF
           {
-            "ApplicationURL": "${{ github.event.inputs.otm_url }}",
-            "UserName": "${{ github.event.inputs.otm_username }}",
-            "Password": "${{ secrets.OTM_PASSWORD }}",
+            "URL": "${{ github.event.inputs.otm_url }}",
+            "DBA_USERNAME": "${{ github.event.inputs.otm_username }}",
+            "DBA_PASSWORD": "${{ secrets.OTM_PASSWORD }}",
             "ChromeDriverPath": "./chromedriver",
-            "BrowserName": "chrome",
+            "BROWSER": "chrome",
             "HeadlessBrowser": "true",
+            "ELEMENT_TIMEOUT": 30000,
             "ScreenShotPath": "./Results/SanityBatch/Screenshots/",
             "LogFilePath": "./Results/SanityBatch/Logs/"
           }

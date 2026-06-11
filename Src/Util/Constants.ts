@@ -11,9 +11,7 @@ export class Constants {
   public static PAGE_TITLE_TIMEOUT;
   public static CHROME_POPUP_WAITTIME = 5000;
   public static FIREFOX_POPUP_WAITTIME = 8000;
-  private static strTempPath = __filename;
-  public static PROJECT_FOLDER_NAME = process.cwd();
-  public static PROJECT_FOLDER = Constants.strTempPath.substring(0, Constants.strTempPath.indexOf(this.PROJECT_FOLDER_NAME) + this.PROJECT_FOLDER_NAME.length);
+  public static PROJECT_FOLDER = process.cwd();
   public static envConfig: any;
   public static sURL: string;
   public static sBROWSER: string;
@@ -55,7 +53,7 @@ export class Constants {
 
     this.TEST_OBJECT = testObj;
 
-    this.envConfig = await require(path.join(Constants.PROJECT_FOLDER, "EnvironmentConfig.json"));
+    this.envConfig = JSON.parse(fs.readFileSync(path.join(Constants.PROJECT_FOLDER, "EnvironmentConfig.json"), "utf8"));
 
     this.sURL = await this.getURL();
     this.sBROWSER = await this.getBrowser();

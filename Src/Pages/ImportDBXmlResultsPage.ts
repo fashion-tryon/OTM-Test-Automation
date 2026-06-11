@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 
 export class ImportDBXmlResultsPage extends Page
 {
@@ -14,4 +14,5 @@ export class ImportDBXmlResultsPage extends Page
     }
 
 }
+
 

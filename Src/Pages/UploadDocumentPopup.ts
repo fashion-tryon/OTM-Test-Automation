@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Popup } from "../util/Popup";
+﻿import { By } from "selenium-webdriver";
+import { Popup } from "../Util/Popup";
 import { UploadDocumentSuccessfulPopup } from "./UploadDocumentSuccessfulPopUp";
 
 export class UploadDocumentPopup extends Popup {
@@ -38,4 +38,5 @@ export class UploadDocumentPopup extends Popup {
     }
 
 }
+
 

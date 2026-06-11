@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Popup } from "../util/Popup";
+﻿import { By } from "selenium-webdriver";
+import { Popup } from "../Util/Popup";
 
 export class ApproveForExecutionPopup extends Popup {
     private sTitle = "Approve for Execution";
@@ -54,4 +54,5 @@ export class ApproveForExecutionPopup extends Popup {
     }
 
 }
+
 

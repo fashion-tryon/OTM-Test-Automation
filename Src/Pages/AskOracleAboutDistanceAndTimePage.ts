@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 import { AskOracleAboutDistanceAndTimeResultsPage } from "./AskOracleAboutDistanceAndTimeResultsPage";
 
 export class AskOracleAboutDistanceAndTimePage extends Page {
@@ -30,4 +30,5 @@ export class AskOracleAboutDistanceAndTimePage extends Page {
     }
 
 }
+
 

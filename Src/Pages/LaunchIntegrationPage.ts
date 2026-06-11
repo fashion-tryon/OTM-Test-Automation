@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 import { UploadAnXMLOrCSVTransmissionPage } from "./UploadAnXMLOrCSVTransmissionPage";
 
 export class LaunchIntegrationPage extends Page {
@@ -27,4 +27,5 @@ export class LaunchIntegrationPage extends Page {
     }
 
 }
+
 

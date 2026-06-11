@@ -1,6 +1,6 @@
-import { WebElement, By } from "selenium-webdriver";
-import { Page } from "../util/Page";
-import { Constants } from "../util/Constants";
+﻿import { WebElement, By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
+import { Constants } from "../Util/Constants";
 import { ojTreeView, OjTreeView } from "@oracle/oraclejet-webdriver/elements";
 
 export class HomePage extends Page {
@@ -101,4 +101,5 @@ export class HomePage extends Page {
     }
 
 }
+
 

@@ -1,5 +1,5 @@
-import { WebElement, By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { WebElement, By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 
 export class FinderResultsPage extends Page {
     private sTitle = "Result";
@@ -146,4 +146,5 @@ export class FinderResultsPage extends Page {
     }
 
 }
+
 

@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Popup } from "../util/Popup";
+﻿import { By } from "selenium-webdriver";
+import { Popup } from "../Util/Popup";
 
 export class SecuredResourcesPopup extends Popup {
     private sTitle = "Secure Resources";
@@ -46,4 +46,5 @@ export class SecuredResourcesPopup extends Popup {
     }
 
 }
+
 

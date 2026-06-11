@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 
 export class CreateNewDomainResultsPage extends Page {
     private sTitle = "Create New Domain Results";
@@ -26,4 +26,5 @@ export class CreateNewDomainResultsPage extends Page {
         await this.driver.switchTo().defaultContent();
     }
 }
+
 

@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Popup } from "../util/Popup";
+﻿import { By } from "selenium-webdriver";
+import { Popup } from "../Util/Popup";
 import { ResultsPopup } from "./ResultsPopup";
 
 export class OnlineBookingAndTenderingPopup extends Popup {
@@ -28,4 +28,5 @@ export class OnlineBookingAndTenderingPopup extends Popup {
 
 
 }
+
 

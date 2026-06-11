@@ -1,5 +1,5 @@
-import { By, until } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By, until } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 
 
 export class RateLoadDefinationsEditPage extends Page {
@@ -61,3 +61,4 @@ export class RateLoadDefinationsEditPage extends Page {
 
 
 }
+

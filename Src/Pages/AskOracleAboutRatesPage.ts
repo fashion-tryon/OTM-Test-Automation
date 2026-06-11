@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 import { AskOracleAboutRatesResultsPage } from "./AskOracleAboutRatesResultsPage";
 
 export class AskOracleAboutRatesPage extends Page {
@@ -29,4 +29,5 @@ export class AskOracleAboutRatesPage extends Page {
     }
 
 }
+
 

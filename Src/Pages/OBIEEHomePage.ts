@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 
 export class OBIEEHomePage extends Page {
 
@@ -38,5 +38,6 @@ export class OBIEEHomePage extends Page {
     }
 
 }
+
 
 

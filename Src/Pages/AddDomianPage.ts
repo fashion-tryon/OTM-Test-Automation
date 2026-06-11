@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 
 export class AddDomainPage extends Page {
     private sTitle = "Add Domain";
@@ -48,4 +48,5 @@ export class AddDomainPage extends Page {
     }
 
 }
+
 

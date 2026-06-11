@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 import { TestUtil } from "../Util/TestUtil";
 
 export class FinderPage extends Page {
@@ -77,4 +77,5 @@ export class FinderPage extends Page {
     }
 
 }
+
 

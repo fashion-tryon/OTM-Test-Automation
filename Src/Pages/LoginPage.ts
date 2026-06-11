@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 import { HomePage } from "./HomePage";
 
 export class LoginPage extends Page {
@@ -41,4 +41,5 @@ export class LoginPage extends Page {
     }
 
 }
+
 

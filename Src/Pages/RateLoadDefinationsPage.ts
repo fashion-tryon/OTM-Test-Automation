@@ -1,6 +1,6 @@
-import { WebElement, By, until } from "selenium-webdriver";
+﻿import { WebElement, By, until } from "selenium-webdriver";
 import { OJETActions } from "../Util/OJETActions";
-import { CommonFunctions } from "../util/CommonFunctions";
+import { CommonFunctions } from "../Util/CommonFunctions";
 
 
 export class RateLoadDefinationsPage extends OJETActions {
@@ -133,4 +133,5 @@ export class RateLoadDefinationsPage extends OJETActions {
   }
 
 }
+
 

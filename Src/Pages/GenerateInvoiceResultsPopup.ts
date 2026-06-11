@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Popup } from "../util/Popup";
+﻿import { By } from "selenium-webdriver";
+import { Popup } from "../Util/Popup";
 
 export class GenerateInvoiceResultsPopup extends Popup {
     private sTitle = "Generate Invoice Results";
@@ -55,4 +55,5 @@ export class GenerateInvoiceResultsPopup extends Popup {
     }
 
 }
+
 

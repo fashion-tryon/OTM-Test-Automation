@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Page } from "../util/Page";
+﻿import { By } from "selenium-webdriver";
+import { Page } from "../Util/Page";
 
 export class BIPHomePage extends Page {
 
@@ -35,5 +35,6 @@ export class BIPHomePage extends Page {
 
 
 }
+
 
 

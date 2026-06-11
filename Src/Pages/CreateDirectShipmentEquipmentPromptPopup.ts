@@ -1,5 +1,5 @@
-import { By } from "selenium-webdriver";
-import { Popup } from "../util/Popup";
+﻿import { By } from "selenium-webdriver";
+import { Popup } from "../Util/Popup";
 import { BuildShipmentPopup } from "./BuildShipmentPopup";
 
 export class CreateDirectShipmentEquipmentPromptPopup extends Popup {
@@ -28,4 +28,5 @@ export class CreateDirectShipmentEquipmentPromptPopup extends Popup {
     }
 
 }
+
 

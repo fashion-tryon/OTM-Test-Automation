@@ -5,8 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "build": "npm install --prefix client && npm run build --prefix client",
-    "postinstall": "npm run build",
+    "build": "SKIP_BUILD=1 npm install --prefix client && npm run build --prefix client",
+    "postinstall": "node -e \"if(!process.env.SKIP_BUILD)require('child_process').execSync('npm run build',{stdio:'inherit'})\"",
     "test:login": "npx playwright test tests/login.spec.ts",
     "test:all": "npx playwright test",
     "report": "npx allure generate allure-results --clean -o allure-report"

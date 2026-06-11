@@ -2,7 +2,10 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 
-const DB_PATH = path.join(__dirname, '..', 'otm-portal.db');
+// Use /tmp on Render (read-only filesystem); fall back to project root locally
+const DB_PATH = process.env.RENDER
+  ? path.join('/tmp', 'otm-portal.db')
+  : path.join(__dirname, '..', 'otm-portal.db');
 
 let _db = null;
 

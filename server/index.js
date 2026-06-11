@@ -18,7 +18,6 @@ function loadRegions() {
   if (process.env.REGIONS_JSON) return JSON.parse(process.env.REGIONS_JSON);
   throw new Error('regions.json not found and REGIONS_JSON env var not set');
 }
-module.exports = { loadRegions };
 const CLIENT_DIST = path.join(__dirname, '..', 'client', 'dist');
 const ALLURE_DIR  = path.join(__dirname, '..', 'allure-report');
 

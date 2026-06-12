@@ -73,6 +73,7 @@ function handleTrigger(req, res, upath) {
 
       const suite      = payload.suite      || 'login';
       const regionKey  = payload.region     || 'north-america';
+      const testCase   = payload.testCase   || '';
 
       // Load region credentials
       const regions     = loadRegions();
@@ -102,6 +103,7 @@ function handleTrigger(req, res, upath) {
           OTM_DOMAIN:       regionCfg.domain   || '',
           OTM_REGION:       regionKey,
           OTM_REGION_LABEL: regionLabel,
+          OTM_TEST_CASE:    testCase,
         },
       });
 

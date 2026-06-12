@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft, RefreshCw, Plus, ChevronDown, ChevronRight,
-  Edit2, Trash2, Eye, ToggleLeft, ToggleRight, FlaskConical,
+  Edit2, Trash2, Eye, ToggleLeft, ToggleRight, FlaskConical, Play,
 } from 'lucide-react';
 import { RegionBadge } from '../components/StatusBadge';
 
@@ -123,6 +123,7 @@ export default function RegionRegistry() {
   const [suiteModal,   setSuiteModal]   = useState(null);  // null | 'add' | suite obj
   const [caseModal,    setCaseModal]    = useState(null);  // null | { suiteId, tc? }
   const [confirmDel,   setConfirmDel]   = useState(null);  // null | { type, id, label }
+  const [runModal,     setRunModal]     = useState(null);  // null | { tc, suiteName }
 
   const fetchSuites = useCallback(() => {
     fetch('/api/registry/' + region + '/suites')
@@ -185,6 +186,16 @@ export default function RegionRegistry() {
   const toggleCase = async (tc) => {
     await fetch('/api/registry/cases/' + tc.id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ is_active: tc.is_active ? 0 : 1 }) });
     fetchCases(tc.suite_id);
+  };
+
+  const triggerTestCase = async (tc, suiteName) => {
+    setRunModal(null);
+    await fetch('/api/trigger', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ suite: 'login', region, testCase: tc.name }),
+    });
+    navigate('/');
   };
 
   if (loading) return <div className="flex justify-center py-24"><RefreshCw className="w-8 h-8 text-blue-500 animate-spin" /></div>;
@@ -267,6 +278,13 @@ export default function RegionRegistry() {
                               {tc.description && <div className="text-xs text-slate-400 mt-0.5 truncate">{tc.description}</div>}
                             </div>
                             <div className="flex items-center gap-1.5 shrink-0">
+                              <button
+                                onClick={() => setRunModal({ tc, suiteName: suite.name })}
+                                className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 hover:text-blue-700 text-xs font-semibold transition-colors"
+                                title="Run this test"
+                              >
+                                <Play className="w-3 h-3" /> Run
+                              </button>
                               <button onClick={() => navigate('/registry/cases/' + tc.id)} className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-600" title="View">
                                 <Eye className="w-3.5 h-3.5" />
                               </button>
@@ -316,6 +334,40 @@ export default function RegionRegistry() {
           onClose={() => setCaseModal(null)}
           onSave={saveCase}
         />
+      )}
+
+      {/* Run test case confirmation */}
+      {runModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6">
+            <div className="font-bold text-slate-800 mb-4">Run Test Case</div>
+            <div className="space-y-2 mb-5 text-sm">
+              <div className="flex gap-2">
+                <span className="text-slate-400 w-16 shrink-0">Test</span>
+                <span className="font-semibold text-slate-800">{runModal.tc.name}</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-slate-400 w-16 shrink-0">Suite</span>
+                <span className="text-slate-600">{runModal.suiteName}</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-slate-400 w-16 shrink-0">Region</span>
+                <span className="text-slate-600">{meta.flag} {meta.label}</span>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <button onClick={() => setRunModal(null)} className="flex-1 px-4 py-2 border border-slate-200 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">
+                Cancel
+              </button>
+              <button
+                onClick={() => triggerTestCase(runModal.tc, runModal.suiteName)}
+                className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold flex items-center justify-center gap-2"
+              >
+                <Play className="w-4 h-4" /> Run Now
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Delete confirmation */}

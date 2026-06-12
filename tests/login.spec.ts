@@ -12,6 +12,7 @@ const OTM_PASSWORD    = process.env.OTM_PASSWORD     ?? '';
 const OTM_DOMAIN      = process.env.OTM_DOMAIN       ?? '';
 const OTM_REGION      = process.env.OTM_REGION       ?? 'north-america';
 const OTM_REGION_LABEL = process.env.OTM_REGION_LABEL ?? 'North America';
+const OTM_TEST_CASE   = process.env.OTM_TEST_CASE    ?? '';
 
 // Oracle IDCS (OCI) login selectors — from Selenium LoginPage.ts
 const SEL_OCI_USERNAME = '#idcs-signin-basic-signin-form-username';
@@ -101,6 +102,11 @@ function saveTestResult(runId: number | null, result: {
 test.describe('OTM Login', () => {
 
   test('User can log in to Oracle Transportation Management', async ({ page }) => {
+    // If a specific test case was requested and it's not Login, skip this test
+    if (OTM_TEST_CASE && OTM_TEST_CASE.toLowerCase() !== 'login') {
+      test.skip(true, `Skipping Login — OTM_TEST_CASE=${OTM_TEST_CASE}`);
+      return;
+    }
     await allure.epic('Authentication');
     await allure.feature('Login');
     await allure.story('OCI login with valid credentials');

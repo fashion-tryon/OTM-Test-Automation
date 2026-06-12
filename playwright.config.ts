@@ -23,7 +23,7 @@ export default defineConfig({
 
   use: {
     baseURL: process.env.OTM_URL,
-    headless: false,
+    headless: process.env.RENDER ? true : false,
     viewport: { width: 1440, height: 900 },
     screenshot: 'on',
     video: 'retain-on-failure',
